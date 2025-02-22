@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-       PROJECT_NAME: Diary
-       PROJECT_NAME_TESTS: Diary.UnitTests
+       PROJECT_NAME: Minesweeper
+       PROJECT_NAME_TESTS: Minesweeper.UnitTests
        
     steps:
     - uses: actions/checkout@v4
