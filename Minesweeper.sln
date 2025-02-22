@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35728.132 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minesweeper", "Minesweeper\Minesweeper.csproj", "{84F286FF-C0ED-4E5C-8FC5-EBAA80F9C09E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minesweeper.Core", "Minesweeper.Core\Minesweeper.Core.csproj", "{79E2A05A-D667-4836-BC95-5FAF43785E87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minesweeper.DataAccess", "Minesweeper.DataAccess\Minesweeper.DataAccess.csproj", "{4EC59006-0B0E-487E-8E04-1A750BC60BC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minesweeper.BusinessLogic", "Minesweeper.BusinessLogic\Minesweeper.BusinessLogic.csproj", "{CA0CD8BB-DC22-4F1A-81F7-D79108BAE403}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3BABA886-CEDF-4487-B36A-90ABB5D01C43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84F286FF-C0ED-4E5C-8FC5-EBAA80F9C09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84F286FF-C0ED-4E5C-8FC5-EBAA80F9C09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84F286FF-C0ED-4E5C-8FC5-EBAA80F9C09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84F286FF-C0ED-4E5C-8FC5-EBAA80F9C09E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79E2A05A-D667-4836-BC95-5FAF43785E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E2A05A-D667-4836-BC95-5FAF43785E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E2A05A-D667-4836-BC95-5FAF43785E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E2A05A-D667-4836-BC95-5FAF43785E87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EC59006-0B0E-487E-8E04-1A750BC60BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EC59006-0B0E-487E-8E04-1A750BC60BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EC59006-0B0E-487E-8E04-1A750BC60BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EC59006-0B0E-487E-8E04-1A750BC60BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA0CD8BB-DC22-4F1A-81F7-D79108BAE403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA0CD8BB-DC22-4F1A-81F7-D79108BAE403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA0CD8BB-DC22-4F1A-81F7-D79108BAE403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA0CD8BB-DC22-4F1A-81F7-D79108BAE403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BABA886-CEDF-4487-B36A-90ABB5D01C43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BABA886-CEDF-4487-B36A-90ABB5D01C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BABA886-CEDF-4487-B36A-90ABB5D01C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BABA886-CEDF-4487-B36A-90ABB5D01C43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
