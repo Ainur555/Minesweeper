@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Mvc;
 using Minesweeper.Mapping;
 using Minesweeper.Middlewares;
 using Minesweeper.Settings;
@@ -43,7 +44,20 @@ namespace Minesweeper
             services.AddHealthChecks().AddCheck<MinesweeperHealthCheck>("minesweeperHealth", tags: new string[] { "minesweeperHealthCheck" });
             services.AddFluentValidationAutoValidation();
             services.AddValidators();
-           
+
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = context =>
+                {
+                    var errors = context.ModelState
+                        .Where(e => e.Value.Errors.Count > 0)
+                        .SelectMany(e => e.Value.Errors)
+                        .Select(e => e.ErrorMessage)
+                        .ToArray();
+                    var result = new { error = string.Join("; ", errors) };
+                    return new BadRequestObjectResult(result);
+                };
+            });
 
             services.AddOpenApiDocument(options =>
             {
