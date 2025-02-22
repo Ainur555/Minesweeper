@@ -36,7 +36,7 @@ jobs:
 
     env:
       REGISTRY: ghcr.io
-      IMAGE_NAME: aaterekhov/diary
+      IMAGE_NAME: ainur555/minesweeper
       IMAGE_TAG: latest
 
     steps:
