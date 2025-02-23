@@ -36,7 +36,7 @@ jobs:
 
     env:
       REGISTRY: ghcr.io
-      IMAGE_NAME: ainur555/minesweeper
+      IMAGE_NAME: ainur555/minesweeper-ghcr
       IMAGE_TAG: latest
 
     steps:
@@ -53,7 +53,7 @@ jobs:
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
-        password: ${{ secrets.CR_HABITS }}
+        password: ${{ secrets.GH_PAT}}
 
     # Extract metadata (tags, labels) for Docker
     # https://github.com/docker/metadata-action
