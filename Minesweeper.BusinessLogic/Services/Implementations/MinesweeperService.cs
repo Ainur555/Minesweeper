@@ -55,16 +55,16 @@ namespace Minesweeper.BusinessLogic.Services.Implementations
         {
             var gameData = GetGame(request.GameId);
             if (gameData == null)
-                throw new ArgumentException("Game not found.");
+                throw new ArgumentException("Игра не найдена!");
 
             if (gameData.Completed)
-                throw new InvalidOperationException("Game is already completed.");
+                throw new InvalidOperationException("Текущая игра уже завершилась!");
 
             if (request.Row < 0 || request.Row >= gameData.Height || request.Col < 0 || request.Col >= gameData.Width)
-                throw new ArgumentException("Invalid cell coordinates.");
+                throw new ArgumentException("Неверные координаты ячейки!");
 
             if (gameData.Field[request.Row][request.Col] != ' ')
-                throw new InvalidOperationException("Cell is already opened.");
+                throw new InvalidOperationException("Ячейка уже открыта!");
 
             if (gameData.Mines.Any(m => m.Row == request.Row && m.Col == request.Col))
             {
