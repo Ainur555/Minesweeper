@@ -15,7 +15,6 @@ namespace Minesweeper.BusinessLogic.Services.Implementations
     /// <param name="_distributedCache"></param>
     public class MinesweeperService(IDistributedCache _distributedCache) : IMinesweeperService
     {
-        private readonly Dictionary<string, GameData> _games = new();
         private const string KeyPrefix = "minesweeper:game:";
 
         /// <summary>
@@ -152,9 +151,14 @@ namespace Minesweeper.BusinessLogic.Services.Implementations
         /// <returns>char[][]</returns>
         private char[][] InitializeField(int width, int height)
         {
-            return Enumerable.Range(0, height)
-                .Select(_ => Enumerable.Repeat(' ', width).ToArray())
-                .ToArray();
+            char[][] result = new char[height][];
+
+            for (int i = 0; i < height; i++)
+            {
+                result[i] = new string(' ', width).ToCharArray();
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -169,7 +173,7 @@ namespace Minesweeper.BusinessLogic.Services.Implementations
                 return;
 
             int minesCount = CountAdjacentMines(game, row, col);
-            game.Field[row][col] = minesCount == 0 ? '0' : (char)('0' + minesCount);
+            game.Field[row][col] = minesCount == 0 ? '0' : minesCount.ToString()[0];
 
             if (minesCount == 0)
             {

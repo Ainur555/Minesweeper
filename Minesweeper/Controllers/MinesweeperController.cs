@@ -26,7 +26,7 @@ namespace Minesweeper.Controllers
                 var game = _service.CreateGame(_mapper.Map<NewGameDto>(request));
                 return Ok(_mapper.Map<GameInfoResponse>(game));
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return BadRequest(new ErrorResponse { Error = ex.Message });
             }
@@ -40,7 +40,7 @@ namespace Minesweeper.Controllers
                 var game = _service.MakeMove(_mapper.Map<GameTurnDto>(request));
                 return Ok(_mapper.Map<GameInfoResponse>(game));
             }
-            catch (Exception ex) when (ex is ArgumentException || ex is InvalidOperationException)
+            catch (Exception ex) 
             {
                 return BadRequest(new ErrorResponse { Error = ex.Message });
             }
